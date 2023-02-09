@@ -180,3 +180,5 @@ def play_hangman():
                 print("\n")
             elif guess in used_letters:
                 print("You already used that letter. Try again.\n")
+            else:
+                print("Wrong letter. Try again.\n")
