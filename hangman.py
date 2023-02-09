@@ -1,6 +1,4 @@
-# Laboratory Activity # 8
-# Name: Aengracia Aguilar
-# Course and Year: BSCOE 2-2
+
 
 import random
 
@@ -90,66 +88,66 @@ def display_hangman(tries):
                    |     / \\
                    -
                 """,
-        # head, torso, both arms, and one leg
-        """
-           --------
-           |      |
-           |      O
-           |     \\|/
-           |      |
-           |     / 
-           -
-        """,
-        # head, torso, and both arms
-        """
-           --------
-           |      |
-           |      O
-           |     \\|/
-           |      |
-           |      
-           -
-        """,
-        # head, torso, and one arm
-        """
-           --------
-           |      |
-           |      O
-           |     \\|
-           |      |
-           |     
-           -
-        """,
-        # head and torso
-        """
-           --------
-           |      |
-           |      O
-           |      |
-           |      |
-           |     
-           -
-        """,
-        # head
-        """
-           --------
-           |      |
-           |      O
-           |    
-           |      
-           |     
-           -
-        """,
-        # initial empty state
-        """
-           --------
-           |      |
-           |      
-           |    
-           |      
-           |     
-           -
-        """
+                # head, torso, both arms, and one leg
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                """,
+                # head, torso, and both arms
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |      
+                   -
+                """,
+                # head, torso, and one arm
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                """,
+                # head and torso
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                """,
+                # head
+                """
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                """,
+                # initial empty state
+                """
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                """
     ]
     return stages[tries]
 
@@ -159,35 +157,34 @@ def play_hangman():
     alphabet = set("abcdefghijklmnopqrstuvwxyz")
     used_letters = set()
     tries = 6
-    print("The word contains", len(word_letters), "letters.")
+    print("CLUE: the word contains", len(word_letters), "letters.")
     while len(word_letters) > 0 and tries > 0:
         print("You have", tries, "tries left.")
         if used_letters:
             print("Used letters:", " ".join(sorted(used_letters)))
-            print("Available letters:", " ".join(sorted(alphabet - used_letters)))
-            print(display_hangman(tries))
-            guess = input("Please enter a letter: ").lower()
-            if guess in word_letters:
-                word_letters.remove(guess)
-                print("Good guess:", end=" ")
-                for letter in word:
-                    if letter in used_letters:
-                        print(letter, end=" ")
-                    elif letter == guess:
-                        print(letter, end=" ")
-                    else:
-                        print("_", end=" ")
-                print("\n")
-            elif guess in used_letters:
-                print("You already used that letter. Try again.\n")
-            else:
-                print("Wrong letter. Try again.\n")
-                tries -= 1
-                used_letters.add(guess)
-            if tries == 0:
-                print("You lost! The word was", word)
-            else:
-                print("You won! The word was", word)
+        print("Available letters:", " ".join(sorted(alphabet - used_letters)))
+        print(display_hangman(tries))
+        guess = input("Please enter a letter: ").lower()
+        if guess in word_letters:
+            word_letters.remove(guess)
+            print("Good guess:", end=" ")
+            for letter in word:
+                if letter in used_letters:
+                    print(letter, end=" ")
+                elif letter == guess:
+                    print(letter, end=" ")
+                else:
+                    print("_", end=" ")
+            print("\n")
+        elif guess in used_letters:
+            print("You already used that letter. Try again.\n")
+        else:
+            print("Wrong letter. Try again.\n")
+            tries -= 1
+            used_letters.add(guess)
+    if tries == 0:
+        print("You lost! The word was", word)
+    else:
+        print("You won! The word was", word)
 
 play_hangman()
-
