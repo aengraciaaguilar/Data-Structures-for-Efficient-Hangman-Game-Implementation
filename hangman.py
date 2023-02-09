@@ -61,3 +61,20 @@ def selection_sort(words):
                 min_index = j
         words[i], words[min_index] = words[min_index], words[i]
     return words
+
+def partition(words, low, high):
+    pivot = words[high]
+    i = low - 1
+    for j in range(low, high):
+        if words[j] <= pivot:
+            i = i + 1
+            words[i], words[j] = words[j], words[i]
+    words[i + 1], words[high] = words[high], words[i + 1]
+    return i + 1
+
+def quick_sort(words, low, high):
+    if low < high:
+        pivot = partition(words, low, high)
+        quick_sort(words, low, pivot - 1)
+        quick_sort(words, pivot + 1, high)
+    return words
