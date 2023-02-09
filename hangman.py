@@ -78,3 +78,15 @@ def quick_sort(words, low, high):
         quick_sort(words, low, pivot - 1)
         quick_sort(words, pivot + 1, high)
     return words
+
+def display_hangman(tries):
+    stages = [  # final state: head, torso, both arms, and both legs
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                """,
