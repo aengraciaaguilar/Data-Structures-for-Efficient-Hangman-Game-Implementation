@@ -52,3 +52,12 @@ def insertion_sort(words):
             j -= 1
         words[j + 1] = key
     return words
+
+def selection_sort(words):
+    for i in range(len(words)):
+        min_index = i
+        for j in range(i + 1, len(words)):
+            if words[j] < words[min_index]:
+                min_index = j
+        words[i], words[min_index] = words[min_index], words[i]
+    return words
