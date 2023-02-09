@@ -120,3 +120,13 @@ def display_hangman(tries):
            |     
            -
         """,
+        # head and torso
+        """
+           --------
+           |      |
+           |      O
+           |      |
+           |      |
+           |     
+           -
+        """,
