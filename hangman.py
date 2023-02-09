@@ -165,3 +165,4 @@ def play_hangman():
         if used_letters:
             print("Used letters:", " ".join(sorted(used_letters)))
             print("Available letters:", " ".join(sorted(alphabet - used_letters)))
+            print(display_hangman(tries))
