@@ -177,3 +177,4 @@ def play_hangman():
                         print(letter, end=" ")
                     else:
                         print("_", end=" ")
+                print("\n")
