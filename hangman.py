@@ -90,3 +90,13 @@ def display_hangman(tries):
                    |     / \\
                    -
                 """,
+        # head, torso, both arms, and one leg
+        """
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |     / 
+           -
+        """,
