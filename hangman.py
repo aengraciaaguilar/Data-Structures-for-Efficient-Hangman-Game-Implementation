@@ -140,3 +140,15 @@ def display_hangman(tries):
            |     
            -
         """,
+        # initial empty state
+        """
+           --------
+           |      |
+           |      
+           |    
+           |      
+           |     
+           -
+        """
+    ]
+    return stages[tries]
