@@ -42,3 +42,13 @@ def bubble_sort(words):
             if words[j] > words[j + 1]:
                 words[j], words[j + 1] = words[j + 1], words[j]
     return words
+
+def insertion_sort(words):
+    for i in range(1, len(words)):
+        key = words[i]
+        j = i - 1
+        while j >= 0 and key < words[j]:
+            words[j + 1] = words[j]
+            j -= 1
+        words[j + 1] = key
+    return words
