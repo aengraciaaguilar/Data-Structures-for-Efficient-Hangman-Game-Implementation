@@ -170,3 +170,10 @@ def play_hangman():
             if guess in word_letters:
                 word_letters.remove(guess)
                 print("Good guess:", end=" ")
+                for letter in word:
+                    if letter in used_letters:
+                        print(letter, end=" ")
+                    elif letter == guess:
+                        print(letter, end=" ")
+                    else:
+                        print("_", end=" ")
