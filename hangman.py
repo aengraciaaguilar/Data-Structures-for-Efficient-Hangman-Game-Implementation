@@ -130,3 +130,13 @@ def display_hangman(tries):
            |     
            -
         """,
+        # head
+        """
+           --------
+           |      |
+           |      O
+           |    
+           |      
+           |     
+           -
+        """,
