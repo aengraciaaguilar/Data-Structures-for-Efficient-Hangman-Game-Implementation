@@ -160,3 +160,5 @@ def play_hangman():
     used_letters = set()
     tries = 6
     print("The word contains", len(word_letters), "letters.")
+    while len(word_letters) > 0 and tries > 0:
+        print("You have", tries, "tries left.")
