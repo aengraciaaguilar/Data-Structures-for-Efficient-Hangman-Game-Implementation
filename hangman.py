@@ -161,16 +161,18 @@ def play_hangman():
     while len(word_letters) > 0 and tries > 0:
         print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
         print("\n"
-              "You have", tries, "tries left.")
+              "you have", tries, "tries left.")
         if used_letters:
             print("Used letters:", " ".join(sorted(used_letters)))
         print("\n"
               "Available letters:", " ".join(sorted(alphabet - used_letters)))
         print(display_hangman(tries))
-        guess = input("Please enter a letter: ").lower()
+        guess = input("\n"
+                      "Please enter a letter: ").lower()
         if guess in word_letters:
             word_letters.remove(guess)
-            print("Good guess:", end=" ")
+            print("\n"
+                  "Good guess:", end=" ")
             for letter in word:
                 if letter in used_letters:
                     print(letter, end=" ")
@@ -182,7 +184,8 @@ def play_hangman():
         elif guess in used_letters:
             print("You already used that letter. Try again.\n")
         else:
-            print("Wrong letter. Try again.\n")
+            print("\n"
+                  "Wrong letter. Try again.\n")
             tries -= 1
             used_letters.add(guess)
     if tries == 0:
