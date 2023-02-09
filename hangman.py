@@ -186,4 +186,6 @@ def play_hangman():
                 used_letters.add(guess)
             if tries == 0:
                 print("You lost! The word was", word)
+            else:
+                print("You won! The word was", word)
 
