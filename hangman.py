@@ -35,3 +35,10 @@ def merge_sort(words):
     left = merge_sort(words[:mid])
     right = merge_sort(words[mid:])
     return merge(left, right)
+
+def bubble_sort(words):
+    for i in range(len(words)):
+        for j in range(len(words) - 1):
+            if words[j] > words[j + 1]:
+                words[j], words[j + 1] = words[j + 1], words[j]
+    return words
