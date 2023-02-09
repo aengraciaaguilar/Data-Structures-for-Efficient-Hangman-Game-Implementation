@@ -159,22 +159,21 @@ def play_hangman():
     tries = 6
     print("CLUE: the word contains", len(word_letters), "letters.")
     while len(word_letters) > 0 and tries > 0:
-        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
-        print("\n"
-              "you still have", tries, "tries left.")
+        print("\nCHANCES: you still have", tries, "tries left.")
         if used_letters:
             print("\n"
-                  "Used letters:", " ".join(sorted(used_letters)))
-        print("\n"
-              "Available letters:", " ".join(sorted(alphabet - used_letters)))
+                  "used letters:", " ".join(sorted(used_letters)))
+        print("\n")
+        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
+        print("\n")
+        print("AVAILABLE LETTERS:", " ".join(sorted(alphabet - used_letters)))
         print(display_hangman(tries))
-        guess = input(""
-                      "Please enter a letter: ").lower()
+        guess = input("please enter a letter: ").lower()
 
         if guess in word_letters:
             word_letters.remove(guess)
             print("\n"
-                  "Good guess:", end=" ")
+                  "nice! good guess:", end=" ")
             for letter in word:
                 if letter in used_letters:
                     print(letter, end=" ")
@@ -184,15 +183,17 @@ def play_hangman():
                     print("_", end=" ")
             print("\n")
         elif guess in used_letters:
-            print("You already used that letter. Try again.\n")
+            print("you already used that letter, please try again.\n")
         else:
             print("\n"
-                  "Wrong letter. Try again.\n")
+                  "you entered a wrong letter, please try again.\n")
             tries -= 1
             used_letters.add(guess)
     if tries == 0:
-        print("You lost! The word was", word)
+        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
+        print("\n"
+              "                                                       SORRY YOU LOST! the word was", word)
     else:
-        print("You won! The word was", word)
+        print("CONGRATULATIONS YOU WON! you guessed this", word)
 
 play_hangman()
