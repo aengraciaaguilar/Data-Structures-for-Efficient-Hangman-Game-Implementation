@@ -152,3 +152,11 @@ def display_hangman(tries):
         """
     ]
     return stages[tries]
+
+def play_hangman():
+    word = get_word()
+    word_letters = set(word)
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    used_letters = set()
+    tries = 6
+    print("The word contains", len(word_letters), "letters.")
