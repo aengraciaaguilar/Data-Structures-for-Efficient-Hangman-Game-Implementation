@@ -27,3 +27,11 @@ def merge(left, right):
     result += left[i:]
     result += right[j:]
     return result
+
+def merge_sort(words):
+    if len(words) <= 1:
+        return words
+    mid = len(words) // 2
+    left = merge_sort(words[:mid])
+    right = merge_sort(words[mid:])
+    return merge(left, right)
