@@ -10,3 +10,7 @@ def get_words_from_file(file_path):
     words = [word.strip() for word in words]
     return words
 
+def get_word():
+    words = get_words_from_file("words.txt")
+    return random.choice(words)
+
