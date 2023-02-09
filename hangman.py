@@ -167,3 +167,6 @@ def play_hangman():
             print("Available letters:", " ".join(sorted(alphabet - used_letters)))
             print(display_hangman(tries))
             guess = input("Please enter a letter: ").lower()
+            if guess in word_letters:
+                word_letters.remove(guess)
+                print("Good guess:", end=" ")
