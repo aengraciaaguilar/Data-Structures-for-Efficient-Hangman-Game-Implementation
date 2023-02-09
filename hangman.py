@@ -100,3 +100,13 @@ def display_hangman(tries):
            |     / 
            -
         """,
+        # head, torso, and both arms
+        """
+           --------
+           |      |
+           |      O
+           |     \\|/
+           |      |
+           |      
+           -
+        """,
