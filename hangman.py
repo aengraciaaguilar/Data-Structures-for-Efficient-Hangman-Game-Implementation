@@ -189,3 +189,5 @@ def play_hangman():
             else:
                 print("You won! The word was", word)
 
+play_hangman()
+
