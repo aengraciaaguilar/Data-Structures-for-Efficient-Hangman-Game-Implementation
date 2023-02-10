@@ -159,9 +159,9 @@ def play_hangman():
     alphabet = set("abcdefghijklmnopqrstuvwxyz")
     used_letters = set()
     tries = 6
-    print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
-    print("〓                 Hi Player! Ready to Play?                〓")
-    print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
+    print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
+    print("                        Hi Player! Ready to Play?                           ")
+    print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
     print("\n")
     print("             CLUE: the word contains", len(word_letters), "letters.")
     while len(word_letters) > 0 and tries > 0:
@@ -170,7 +170,9 @@ def play_hangman():
             print("\n"
                   "used letters:", " ".join(sorted(used_letters)))
         print("\n")
-        print("AVAILABLE LETTERS:", " ".join(sorted(alphabet - used_letters)))
+        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
+        print("   AVAILABLE LETTERS:", " ".join(sorted(alphabet - used_letters)))
+        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
         print(display_hangman(tries))
         guess = input("please enter a letter: ").lower()
 
