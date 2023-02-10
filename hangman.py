@@ -162,14 +162,13 @@ def play_hangman():
     print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
     print("〓                 Hi Player! Ready to Play?                〓")
     print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★")
-    print("CLUE: the word contains", len(word_letters), "letters.")
+    print("\n")
+    print("             CLUE: the word contains", len(word_letters), "letters.")
     while len(word_letters) > 0 and tries > 0:
-        print("\nCHANCES: you still have", tries, "tries left.")
+        print("           CHANCES: you still have", tries, "tries left.")
         if used_letters:
             print("\n"
                   "used letters:", " ".join(sorted(used_letters)))
-        print("\n")
-        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
         print("\n")
         print("AVAILABLE LETTERS:", " ".join(sorted(alphabet - used_letters)))
         print(display_hangman(tries))
@@ -195,7 +194,6 @@ def play_hangman():
             tries -= 1
             used_letters.add(guess)
     if tries == 0:
-        print("★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓★〓")
         print("\n"
               "                                                       SORRY YOU LOST! the word was", word)
     else:
